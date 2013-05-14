@@ -1,6 +1,8 @@
 var baudio = require('baudio');
 var tau = Math.PI * 2;
 var b = baudio(function (t) {
+    if (t >= 32 * 3 + 3) b.end();
+    
     var g = [
         1, 0, 5/4, 0, 1, 3/5, 0, 0,
     ][Math.floor(t * 2 % 8)];
@@ -10,6 +12,8 @@ var b = baudio(function (t) {
         ? Math.floor(t * 40) % 3200
         : 2000 / Math.floor(t * 40) % 3200
     ;
+    if (t < 8) return drums(t) * (t / 8) * 0.15;
+    
     return (
         (
             0.2 * square(100 * grunge * yoshi)
@@ -44,10 +48,10 @@ var b = baudio(function (t) {
         return t % (1 / x) * x * 2 - 1;
     }
 });
-b.play();
+b.record('clown_drums.ogg');
 
 function drums (t) {
-    var n = t * 0.75 % 1 + 1;
+    var n = t * 0.75 % 3 + 1;
     var f = Math.sin(tau * tau / ((n * 16 % 2 + 0.5) * 1));
     return Math.sin(tau * n * f);
 }
