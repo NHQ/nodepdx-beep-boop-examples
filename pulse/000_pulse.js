@@ -20,7 +20,10 @@ var b = baudio(function (t) {
             (square(400) + square(404))
             / 15 + sin(400) * 0.5 + sin(4) + sin(3)
         ) / 4
-        + (t % 8 > 7) * (square(280) + square(285)) * (sin(4) + sin(10)) / 20
+        + (t % 8 > 7) * (square(280) + square(285)) * (sin(4) + sin(5)) / 20
+        + (t % 8 > 6 && t % 8 < 7) * (
+            sin(3) * (sawtooth(150) + square(151) + sin(152)) / 8
+        )
     );
     
     function sin (x) {
@@ -37,4 +40,3 @@ var b = baudio(function (t) {
     }
 });
 b.play();
-
