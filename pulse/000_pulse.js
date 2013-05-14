@@ -6,9 +6,13 @@ var b = baudio(function (t) {
     ][Math.floor(t * 2 % 8)];
     var grunge = (g > 0) * Math.pow(2, -2) * Math.pow(2, g);
     
+    var yoshi = t % 16 < 8
+        ? Math.floor(t * 40) % 3200
+        : 2000 / Math.floor(t * 40) % 3200
+    ;
     return (
         (
-            0.2 * square(100 * grunge * Math.floor(t * 40) % 3200)
+            0.2 * square(100 * grunge * yoshi)
             + 0.2 * sin(124 * grunge * 20 + Math.floor(t) % 16 * 20)
             + 0.2 * sawtooth(612 * grunge - 1)
             + 0.2 * sawtooth(404 * grunge - 1)
