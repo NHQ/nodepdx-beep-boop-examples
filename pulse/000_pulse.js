@@ -8,7 +8,7 @@ var b = baudio(function (t) {
     
     return (
         (
-            0.2 * square(100 * grunge)
+            0.2 * square(100 * grunge * Math.floor(t * 40) % 3200)
             + 0.2 * sin(124 * grunge * 20 + Math.floor(t) % 16 * 20)
             + 0.2 * sawtooth(612 * grunge - 1)
             + 0.2 * sawtooth(404 * grunge - 1)
