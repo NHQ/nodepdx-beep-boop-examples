@@ -20,7 +20,8 @@ var b = baudio(function (tt) {
     var f = x + Math.sin(z * (t % 1));
     
     return (
-        0.2 * Math.sin(tau * t * f)
+        0.15 * Math.sin(tau * t * f)
+        + 0.1 * Math.sin(tau * t * (f * 2 + 4))
         + 0.5 * shaker(tt < 16 ? tt : (tt % 4 + 16))
         + extra
     );
