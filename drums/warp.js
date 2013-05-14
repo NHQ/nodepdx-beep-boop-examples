@@ -2,7 +2,6 @@ var baudio = require('baudio');
 var tau = Math.PI * 2;
 var b = baudio(function (tt) {
     var t = tt % 8;
-    var speed = (tt % 32) < 16 ? 2 : 1;
     
     var extra = (tt % 32 >= 15.5 && tt % 32 < 16.5) * (
         2 * sin(254)
@@ -12,14 +11,11 @@ var b = baudio(function (tt) {
     ) * (sin(3) + sin(5) + sin(0.5)) / 3;
     
     var n = t % 7;
-    var xs = [
-        120+t%0.1,
-        240,
-        450*Math.sin((2+n%3/2)/((n%5+2)/4)*tau),
-        20+t*10
-    ];
+    var xs = [ 120, 240, 450, 20 ];
+    
+    var speed = tt % 8 > 7 ? 16 : 2;
     var x = xs[Math.floor(t*speed)%xs.length]
-    var z = t % 8 < 7 ? 1000 : 80;
+    var z = tt % 8 < 7 ? 1000 : 80;
     
     var f = x + Math.sin(z * (t % 1));
     
