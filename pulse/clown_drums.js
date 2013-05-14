@@ -1,7 +1,7 @@
 var baudio = require('baudio');
 var tau = Math.PI * 2;
 var b = baudio(function (t) {
-    if (t >= 32 * 3 + 3) b.end();
+    //if (t >= 32 * 3 + 3) b.end();
     
     var g = [
         1, 0, 5/4, 0, 1, 3/5, 0, 0,
@@ -48,7 +48,7 @@ var b = baudio(function (t) {
         return t % (1 / x) * x * 2 - 1;
     }
 });
-b.record('clown_drums.ogg');
+b.play();
 
 function drums (t) {
     var n = t * 0.75 % 3 + 1;
