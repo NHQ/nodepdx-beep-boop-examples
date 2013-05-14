@@ -12,7 +12,10 @@ var b = baudio(function (t) {
             + 0.2 * sin(124 * grunge + 4)
             + 0.2 * sawtooth(612 * grunge - 1)
             + 0.2 * sawtooth(404 * grunge - 1)
-        ) * ((square(400) + square(403)) / 15 + sin(400) * 0.5 + sin(4) + sin(3)) / 4
+        ) * (
+            (square(400) + square(404))
+            / 15 + sin(400) * 0.5 + sin(4) + sin(3)
+        ) / 4
     );
     
     function sin (x) {
