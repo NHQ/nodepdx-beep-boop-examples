@@ -24,6 +24,10 @@ var b = baudio(function (t) {
         + (t % 8 > 6 && t % 8 < 7) * (
             sin(3) * (sawtooth(150) + square(151) + sin(152)) / 8
         )
+        + (t % 32 > 24) * (
+            sawtooth(grunge * 6400 + Math.floor(t * 1000 % 4000))
+            + square(grunge * 5000 + 4000 / Math.floor(t * 1000 % 4000))
+        ) / 8
     );
     
     function sin (x) {
