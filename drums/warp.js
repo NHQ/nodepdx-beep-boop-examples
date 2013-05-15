@@ -22,8 +22,9 @@ var b = baudio(function (tt) {
     return (
         0.15 * Math.sin(tau * t * f)
         + 0.1 * Math.sin(tau * t * (f * 2 + 4))
-        + 0.5 * shaker(tt < 16 ? tt : (tt % 4 + 16))
+        + 0.5 * (tt >= 4) * shaker(tt < 16 ? tt : (tt % 4 + 16))
         + extra
+        + (tt >= 12 && t % (1/2) < 1/24 ? Math.random() : 0)
     );
     
     function sin (x) {
