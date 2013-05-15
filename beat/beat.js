@@ -37,16 +37,16 @@ var b = baudio(function (t) {
     else return primary(n);
     
     function sin (x) {
-        return Math.sin(tau * t * x);
+        return Math.sin(tau * (t % 32) * x);
     }
     
     function square (x) {
-        var n = Math.sin(tau * t * x);
+        var n = Math.sin(tau * (t % 32) * x);
         return n > 0 ? 1 : -1;
     }
     
     function sawtooth (x) {
-        return t % (1 / x) * x * 2 - 1;
+        return (t % 32) % (1 / x) * x * 2 - 1;
     }
     
     function variant (n) {
