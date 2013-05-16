@@ -35,7 +35,7 @@ if we have time
 
 # in the browser
 
-Just use [webaudio](https://npmjs.org/package/webaudio) instead of
+Just use [jsynth](https://npmjs.org/package/jsynth) instead of
 [baudio](https://github.com/substack/baudio):
 
 ```
