@@ -8,7 +8,7 @@ var b = baudio(function (t) {
     
     var yoshi = t % 16 < 8
         ? Math.floor(t % 16 * 40)
-        : 2000 / Math.floor(t % 8 * 40) % 3200
+        : 2000 / Math.floor(t * 40) % 3200
     ;
     
     return (

@@ -5,7 +5,7 @@ var b = baudio(function (t) {
         1, 0, 5/4, 0, 1, 3/5, 0, 0,
     ][Math.floor(t * 2 % 8)];
     var grunge = (g > 0) * Math.pow(2, g - 2);
-    var yoshi = 2000 / Math.floor(t % 8 * 40) % 3200;
+    var yoshi = 2000 / Math.floor(t * 40) % 3200;
     
     return (
         (
