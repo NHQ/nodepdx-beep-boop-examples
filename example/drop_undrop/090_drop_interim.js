@@ -8,8 +8,7 @@ var alt = [ -1/6, 4/2, 1/4, 1/3 ]
 ;
 
 var b = baudio(function (t) {
-    //if (t >= 32 * 2 + 25) b.end();
-    
+    t += 22;
     if (t % 32 >= 23 && t % 32 < 25) {
         t = Math.sin((t - 23) * tau / 8); // drop
     }
@@ -52,7 +51,7 @@ var b = baudio(function (t) {
     function sawtooth (x) {
         return (t % 32) % (1 / x) * x * 2 - 1;
     }
-    
+     
     function variant (n) {
         return (
             square(n / 4) + sawtooth(n * 2)
