@@ -39,5 +39,5 @@ Just use [jsynth](https://npmjs.org/package/jsynth) instead of
 [baudio](https://github.com/substack/baudio):
 
 ```
-$ browserify -r webaudio:baudio music.js > bundle.js
+$ browserify -r jsynth:baudio music.js > bundle.js
 ```
