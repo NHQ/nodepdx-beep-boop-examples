@@ -4,3 +4,11 @@ var b = baudio(function (t) {
     return Math.sin(2 * Math.PI * t * freq);
 });
 b.play();
+
+/*
+     _---_                _---_              
+   ./     \.            ./     \.            
+-  -  -  -  ,  -  -   -,  -   -  ,-  - -   -,
+             ``------``           ``------`` 
+
+*/
