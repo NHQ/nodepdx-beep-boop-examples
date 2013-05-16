@@ -32,3 +32,12 @@ step-by-step of how I made
 # freestyle
 
 if we have time
+
+# in the browser
+
+Just use [webaudio](https://npmjs.org/package/webaudio) instead of
+[baudio](https://github.com/substack/baudio):
+
+```
+$ browserify -r webaudio:baudio music.js > bundle.js
+```
