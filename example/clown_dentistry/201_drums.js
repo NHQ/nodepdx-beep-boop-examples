@@ -1,8 +1,6 @@
 var baudio = require('baudio');
 var tau = Math.PI * 2;
 var b = baudio(function (t) {
-    if (t < 8) return drums(t) * (t / 8) * 0.15;
-    
     var g = [
         1, 0, 5/4, 0, 1, 3/5, 0, 0,
     ][Math.floor(t * 2 % 8)];
@@ -17,8 +15,8 @@ var b = baudio(function (t) {
         (
             0.2 * square(100 * grunge * yoshi)
             + 0.2 * sin(124 * grunge * 20 + Math.floor(t) % 16 * 20)
-            + 0.2 * sawtooth(612 * grunge - 1)
-            + 0.2 * sawtooth(404 * grunge - 1)
+            + 0.2 * sawtooth(612 * grunge)
+            + 0.2 * sawtooth(404 * grunge)
         ) * (
             (square(400) + square(404))
             / 15 + sin(400) * 0.5 + sin(4) + sin(3)
